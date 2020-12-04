@@ -1,5 +1,6 @@
 'use strict'
 let btn = document.querySelector('.btn-cypher');
+let btnReset = document.querySelector('.btn-reset-all');
 
 const caesar = function (text, nr) {
     (nr % 26 == 0 ? nr = 26 : nr = nr % 26);
@@ -53,4 +54,9 @@ btn.addEventListener('click', ()=>{
     let nr = document.getElementById('number').value;
     let cypherText = caesar(text, nr);
     solution.textContent = cypherText;
+})
+btnReset.addEventListener('click', () =>{
+    document.querySelector('.solution').textContent = '###';
+    document.getElementById('inputtext').value = '';
+    document.getElementById('number').value = '';
 })
