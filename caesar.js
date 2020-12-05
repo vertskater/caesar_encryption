@@ -9,7 +9,6 @@ const caesar = function (text, nr) {
         .map(letter => shiftChar(letter, nr))
         .join("");
 };
-
 function shiftChar(letter, nr) {
     let newNr = letter.charCodeAt();
     if (newNr == 33 || newNr == 44 || newNr == 32) {
@@ -45,9 +44,6 @@ function shiftChar(letter, nr) {
         }
     }
 }
-
-
-
 btn.addEventListener('click', ()=>{
     let solution = document.querySelector('.solution');
     let text = document.getElementById('inputtext').value;
