@@ -1,58 +1,47 @@
 'use strict'
-let btn = document.querySelector('.btn-cypher');
-let btnReset = document.querySelector('.btn-reset-all');
+const btn = document.querySelector('.btn-cypher')
+const btnReset = document.querySelector('.btn-reset-all')
 
 const caesar = function (text, nr) {
-    (nr % 26 == 0 ? nr = 26 : nr = nr % 26);
-    return text
-        .split("")
-        .map(letter => shiftChar(letter, nr))
-        .join("");
-};
-function shiftChar(letter, nr) {
-    let newNr = letter.charCodeAt();
-    if (newNr == 33 || newNr == 44 || newNr == 32) {
-        return letter;
-    }
-    if (nr > 0) {
-        if (newNr > 96) {
-            newNr += nr;
-            if (newNr > 122) {
-                newNr -= 26
-            }
-            return letter = String.fromCharCode(newNr);
-        } else if (newNr > 64) {
-            newNr += nr;
-            if (newNr > 90) {
-                newNr -= 26;
-            }
-            return letter = String.fromCharCode(newNr);
-        }
-    }else{
-        if(newNr > 96){
-            newNr += nr;
-            if(newNr < 97){
-                newNr = 122 - (96 - newNr);
-            }
-            return letter = String.fromCharCode(newNr);
-       } else if((newNr > 64)/* && (newNr < 90)*/){
-            newNr += nr;
-            if(newNr < 65){
-                newNr = 90 - (64 - newNr);
-            }
-            return letter = String.fromCharCode(newNr);
-        }
-    }
+  nr % 26 === 0 ? (nr = 26) : (nr = nr % 26)
+  return text
+    .split('')
+    .map((letter) => shiftChar(letter, nr))
+    .join('')
 }
-btn.addEventListener('click', ()=>{
-    let solution = document.querySelector('.solution');
-    let text = document.getElementById('inputtext').value;
-    let nr = document.getElementById('number').value;
-    let cypherText = caesar(text, nr);
-    solution.textContent = cypherText;
+function shiftChar (letter, nr) {
+  const charCode = letter.charCodeAt()
+  if (charCode === 33 || charCode === 44 || charCode === 32) {
+    return letter
+  }
+  let newNr = charCode + nr
+  if (charCode >= 65 && charCode <= 90) {
+    if (newNr > 90) {
+      newNr = newNr - 90 + 64
+    }
+    if (newNr < 65) {
+      newNr += 26
+    }
+  }
+  if (charCode >= 97 && charCode <= 122) {
+    if (newNr > 122) {
+      newNr = newNr - 122 + 96
+    }
+    if (newNr < 97) {
+      newNr += 26
+    }
+  }
+  return (letter = String.fromCharCode(newNr))
+}
+btn.addEventListener('click', () => {
+  const solution = document.querySelector('.solution')
+  const text = document.querySelector('#inputtext').value
+  const nr = document.querySelector('#number').value
+  const cypherText = caesar(text, nr)
+  solution.textContent = cypherText
 })
-btnReset.addEventListener('click', () =>{
-    document.querySelector('.solution').textContent = '###';
-    document.getElementById('inputtext').value = '';
-    document.getElementById('number').value = '';
+btnReset.addEventListener('click', () => {
+  document.querySelector('.solution').textContent = '###'
+  document.querySelector('#inputtext').value = ''
+  document.querySelector('#number').value = ''
 })
