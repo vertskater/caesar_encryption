@@ -107,7 +107,7 @@
     "json-stable-stringify-without-jsonify": "^1.0.1",
     "levn": "^0.4.1",
     "json-schema-traverse": "^0.4.1",
-    "json5": "^1.0.1",
+    "json5": "^2.2.2",
     "jsx-ast-utils": "^3.2.0",
     "load-json-file": "^2.0.0",
     "locate-path": "^2.0.0",
