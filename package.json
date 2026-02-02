@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "standard": "^16.0.3"
+    "standard": "^17.1.2"
   },
   "name": "caesar_encryption",
   "description": "This is a small JavaScript project for Text \"encryption\". The Caesar encryption shifts a string to a given position in the alphabeth.",
