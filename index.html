@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7c1106c071.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Caesar Encryption</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>Caesar Encryption</h1>
+        <div class="description">
+            <i class="fas fa-info-circle"></i>
+            <ol class="description-text">
+                <li>Write a Text in the first Inputbox.</li>
+                <li>Write a Number in the Numberbox</li>
+                <li>Click on the Encrypt Button</li>
+                <li>Every Letter in the Text is going to shift by the given number in the alphabet</li>
+           </ol>
+        </div>
+        <div class="input-output">
+            <div class="input">
+                <input type="text" name="text" placeholder="Hello World!" id="inputtext">
+                <input type="number" name="number" placeholder="5" id="number">
+            </div>
+            <div class="output">
+                <p class="output-text1">Write some Text</p>
+                <p class="output-text2">Choose a Number that shifts every letter down the alphabet (negative Number for decryption)</p>
+            </div>
+        </div>
+        <div class="btn-encryption">
+            <button class="btn-cypher">Encrypt / Decrypt</button>
+        </div>
+        <div class="btn-reset">
+            <button class="btn-reset-all">Reset</button>
+        </div>
+    </div>
+    <div class="solution">
+        ###
+    </div>
+
+    <script type="text/javascript" src="caesar.js"></script>
+</body>
+
+</html>
